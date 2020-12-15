@@ -1,0 +1,44 @@
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+  .topContainer {
+    display: flex;
+    flex-direction: row;
+    .favButton {
+      display: flex;
+      color: $smoke-white;
+      align-items: center;
+      justify-content: space-around;
+
+      font-family: $main-font;
+      font-size: 14px;
+      width: 100px;
+      height: 30px;
+      background-color: transparent;
+      border-radius: $border-radius;
+      border: 2px solid $smoke-white;
+      text-decoration: none;
+      img {
+        width: 15px;
+      }
+    }
+    .artistField {
+
+    }
+    .artistContent {
+      .favButton {
+        img {
+
+        }
+      }
+    }
+  }
+  .lowContainer {
+    .artistField {
+
+    }
+    .artistContent {
+
+    }
+  }
+}

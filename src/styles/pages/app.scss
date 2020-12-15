@@ -1,0 +1,29 @@
+.mainContainer {
+  background-color: $background;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 900px;
+  width: 100vw;
+  border-radius: $border-radius;
+  border: 5px solid $blue;
+
+  .logo {
+    width: 350px;
+    margin: auto;
+    padding-top: 60px;
+    display: block;
+  }
+}
+
+@include respond(tablet) {
+  .mainContainer {
+    .logo {
+      width: 400px;
+    }
+  }
+
+}
+
+@include respond(desktop) {
+
+}

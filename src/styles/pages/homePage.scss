@@ -1,0 +1,56 @@
+.HomeContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  .inputContainer {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: center;
+    input[type="text"] {
+      border: 2px solid $sky-blue;
+      background-color: transparent;
+      border-radius: $border-radius;
+      margin-right: 15px;
+      height: 30px;
+      color: $smoke-white;
+      padding-left: 5px;
+      padding-right: 5px;
+      font-family: $main-font;
+      &:focus {
+        outline: none;
+      }
+    }
+    .searchButton {
+      background-color: transparent;
+      border-radius: $border-radius;
+      border: 2px solid $smoke-white;
+      width: 100px;
+      color: $smoke-white;
+      font-family: $main-font;
+      font-size: 12px;
+    }
+  }
+  .artistsListContainer {
+	  display: flex;
+	  padding-top: 30px;
+	  margin-left: 30px;
+    .artistsList {
+      .artistListLink {
+        text-decoration: none;
+        color: $sky-blue;
+        font-family: $main-font;
+        font-size: 14px;
+        color: $blue;
+        &:visited {
+          text-decoration: none;
+          color: $sky-blue;
+          font-family: $main-font;
+          font-size: 14px;
+          color: $blue;
+        }
+      }
+    }
+  }
+}

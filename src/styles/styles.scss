@@ -1,0 +1,15 @@
+
+@import './mixins/mixins.scss';
+@import './global/global.scss';
+
+// components
+@import './components/error404.scss';
+@import './components/favourites.scss';
+@import './components/loading.scss';
+@import './components/logo.scss';
+
+
+// pages
+@import './pages/homePage.scss';
+@import './pages/detail.scss';
+@import './pages/app.scss';
