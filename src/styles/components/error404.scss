@@ -1,9 +1,8 @@
-
-.errorContainer{
+.errorContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .errorContent{
+  .errorContent {
     font-family: $main-font;
     font-size: 20px;
     color: $smoke-white;

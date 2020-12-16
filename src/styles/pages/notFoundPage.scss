@@ -1,0 +1,9 @@
+.notFoundContainer {
+  margin-top: 30px;
+  .notFound {
+    text-align: center;
+    font-family: $main-font;
+    color: $smoke-white;
+    font-size: 24px;
+  }
+}

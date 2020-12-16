@@ -8,22 +8,12 @@ export const ARTISTS_QUERY = gql`
           id
           name
           country
-          type
           lastFM {
-            name
-            image
             listenerCount
-            playCount
           }
           discogs {
-            realName
             profile
             dataQuality
-          }
-          lifeSpan {
-            begin
-            end
-            ended
           }
         }
       }

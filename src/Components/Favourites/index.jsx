@@ -13,6 +13,7 @@ const Favourites = (props) => {
       {props.favArtists.map((fav) => {
         return (
           <div
+            key={`${fav.id}-favourite`}
             className="favouriteArtist"
             onClick={() => handleDeleteFav(fav.id, fav.artist)}
           >

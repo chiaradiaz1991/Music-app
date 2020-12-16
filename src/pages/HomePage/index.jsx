@@ -14,8 +14,8 @@ import Loading from "../../Components/Loading";
 import Error404 from "../../Components/Error404";
 
 const HomePage = (props) => {
-  const [searchArtist, setSearchArtist] = useState('');
-  const [lookupArtist, setLookupArtist] = useState('');
+  const [searchArtist, setSearchArtist] = useState("");
+  const [lookupArtist, setLookupArtist] = useState("");
   const [getArtists, { error, called, loading, data }] = useLazyQuery(
     ARTISTS_QUERY,
     {
@@ -37,7 +37,7 @@ const HomePage = (props) => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleClick();
     }
   };
@@ -72,7 +72,7 @@ const HomePage = (props) => {
                 return (
                   <Link className="artistListLink" to={`/detail/${data.id}`}>
                     <div
-					key={`${data.id}-index`}
+                      key={`${data.id}-index`}
                       onClick={() => {
                         handleData(data);
                         handleDataArtists();
