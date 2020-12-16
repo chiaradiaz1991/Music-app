@@ -4,17 +4,12 @@ import { addFavourite } from "../../store";
 import { connect } from "react-redux";
 import back from "../../assets/back.png";
 import fav from "../../assets/fav.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Detail = (props) => {
-  const {
-    name,
-    country,
-    type,
-    lastFM,
-    discogs,
-    lifeSpan,
-    id,
-  } = props.data;
+  const notify = (artist) => artist && toast(`${artist} was added to favourites!`);
+  const { name, country, type, lastFM, discogs, lifeSpan, id } = props.data;
   const handleFav = (id, artist) => {
     const { dispatch } = props;
     dispatch(addFavourite(id, artist));
@@ -22,13 +17,17 @@ const Detail = (props) => {
 
   return (
     <div className="detailContainer">
+      <ToastContainer />
       <Link className="goBack" to="/">
         <img src={back} alt="" />
         Go Back
       </Link>
       <section className="topContainer">
         <h2 className="artistField">{name}</h2>
-        <button className="favButton" onClick={() => handleFav(id, name)}>
+        <button className="favButton" onClick={() => {
+          handleFav(id, name)
+          notify(name)
+        }}>
           <img className="favIcon" src={fav} alt="fav" />
         </button>
       </section>
