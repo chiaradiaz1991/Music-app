@@ -9,14 +9,6 @@ export const ARTISTS_QUERY = gql`
           name
           country
           type
-          mediaWikiImages {
-            descriptionURL
-            canonicalTitle
-            objectName
-            descriptionHTML
-            originalDateTimeHTML
-            licenseShortName
-          }
           lastFM {
             name
             image

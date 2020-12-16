@@ -1,0 +1,34 @@
+.favouriteContainer {
+  border: 2px solid $pink-light;
+  border-radius: $border-radius;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  .favouriteTitle {
+    font-family: $main-font;
+    color: $pink-light;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .favouriteArtist {
+    font-family: $main-font;
+    color: $pink;
+    margin: 10px;
+  }
+}
+
+@include respond(tablet) {
+  .favouriteContainer {
+    margin: 0;
+    display: block;
+    width: 240px;
+    height: 300px;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+}

@@ -1,44 +1,66 @@
 .detailContainer {
   display: flex;
   flex-direction: column;
+  margin: 20px;
+  .goBack {
+    display: flex;
+    color: $smoke-white;
+    align-items: center;
+    justify-content: space-around;
+    font-family: $main-font;
+    font-size: 14px;
+    width: 100px;
+    margin-top: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: $border-radius;
+    border: 2px solid $smoke-white;
+    text-decoration: none;
+    img {
+      width: 15px;
+    }
+  }
   .topContainer {
+	align-items: center;
+	margin-top: 20px;
     display: flex;
     flex-direction: row;
+	justify-content: flex-start;
+    .artistField {
+      color: $blue;
+      margin-right: 10px;
+	  font-family: $main-font;
+	  font-size: 26px;
+    }
     .favButton {
       display: flex;
-      color: $smoke-white;
+      justify-content: center;
       align-items: center;
-      justify-content: space-around;
-
-      font-family: $main-font;
-      font-size: 14px;
-      width: 100px;
+      width: 45px;
       height: 30px;
       background-color: transparent;
       border-radius: $border-radius;
       border: 2px solid $smoke-white;
       text-decoration: none;
-      img {
-        width: 15px;
-      }
-    }
-    .artistField {
-
-    }
-    .artistContent {
-      .favButton {
-        img {
-
-        }
+      .favIcon {
+        width: 20px;
       }
     }
   }
   .lowContainer {
+    display: flex;
+    flex-direction: column;
     .artistField {
-
+      font-family: $main-font;
+      color: $blue;
+      font-size: 18px;
+      width: 300px;
     }
-    .artistContent {
-
+    .artistContent {
+      color: $smoke-white;
+      font-family: $main-font;
+      font-size: 14px;
+      width: 300px;
     }
   }
 }

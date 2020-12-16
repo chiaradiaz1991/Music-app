@@ -3,15 +3,17 @@
   margin: 0;
   box-sizing: border-box;
   min-height: 900px;
-  width: 100vw;
+  width: 100%;
   border-radius: $border-radius;
   border: 5px solid $blue;
-
   .logo {
-    width: 350px;
+    width: 300px;
     margin: auto;
     padding-top: 60px;
     display: block;
+  }
+  .contentContainer{
+    
   }
 }
 
@@ -19,6 +21,12 @@
   .mainContainer {
     .logo {
       width: 400px;
+    }
+    .contentContainer {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
     }
   }
 
