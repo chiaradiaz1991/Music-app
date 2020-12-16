@@ -1,19 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLazyQuery } from "@apollo/client";
+
+// query
 import { ARTISTS_QUERY } from "../../operations/queries/query";
 
-import { connect } from "react-redux";
+// store
 import { addArtistData, addArtistList } from "../../store";
+import { connect } from "react-redux";
 
+// components
 import Loading from "../../Components/Loading";
+import Error404 from "../../Components/Error404";
 
 const HomePage = (props) => {
-  const [searchArtist, setSearchArtist] = useState("");
-  const [lookupArtist, setLookupArtist] = useState("");
-  const [getArtists, { called, loading, data }] = useLazyQuery(ARTISTS_QUERY, {
-    variables: { artist: lookupArtist },
-  });
+  const [searchArtist, setSearchArtist] = useState('');
+  const [lookupArtist, setLookupArtist] = useState('');
+  const [getArtists, { error, called, loading, data }] = useLazyQuery(
+    ARTISTS_QUERY,
+    {
+      variables: { artist: lookupArtist },
+    }
+  );
 
   if (called && loading) return <Loading />;
 
@@ -25,11 +33,11 @@ const HomePage = (props) => {
 
   const handleClick = () => {
     setLookupArtist(searchArtist);
-	getArtists();
+    getArtists();
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       handleClick();
     }
   };
@@ -38,7 +46,6 @@ const HomePage = (props) => {
     const { dispatch } = props;
     dispatch(addArtistList(data));
   };
-
 
   return (
     <div className="HomeContainer">
@@ -57,21 +64,27 @@ const HomePage = (props) => {
       </div>
       <div className="artistsListContainer">
         <div className="artistsList">
-          { 
-            data?.search?.artists.nodes.map((data) => {
-              return (
-                <Link className="artistListLink" to={`/detail/${data.id}`}>
-                  <div
-                    onClick={() => {
-                      handleData(data);
-                      handleDataArtists();
-                    }}
-                  >
-                    {data.name}
-                  </div>
-                </Link>
-              );
-            })}
+          {error ? (
+            <Error404 />
+          ) : (
+            <>
+              {data?.search?.artists.nodes.map((data, index) => {
+                return (
+                  <Link className="artistListLink" to={`/detail/${data.id}`}>
+                    <div
+					key={`${data.id}-index`}
+                      onClick={() => {
+                        handleData(data);
+                        handleDataArtists();
+                      }}
+                    >
+                      {data.name}
+                    </div>
+                  </Link>
+                );
+              })}
+            </>
+          )}
         </div>
       </div>
     </div>

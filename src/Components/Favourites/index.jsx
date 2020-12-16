@@ -1,3 +1,4 @@
+// store
 import { connect } from "react-redux";
 import { deleteFavourite } from "../../store";
 

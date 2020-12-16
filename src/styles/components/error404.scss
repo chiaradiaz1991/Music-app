@@ -1,0 +1,12 @@
+
+.errorContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .errorContent{
+    font-family: $main-font;
+    font-size: 20px;
+    color: $smoke-white;
+    margin-left: 15px;
+  }
+}

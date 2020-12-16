@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+
+// store
 import { addFavourite } from "../../store";
 import { connect } from "react-redux";
+
+// assets
 import back from "../../assets/back.png";
 import fav from "../../assets/fav.png";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 const Detail = (props) => {
   const notify = (artist) => artist && toast(`${artist} was added to favourites!`);

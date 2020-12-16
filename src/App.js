@@ -1,10 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import Detail from "./pages/Detail";
+
+// store
 import { connect } from "react-redux";
+
+// components
 import Favourites from "./Components/Favourites";
 import Logo from "./Components/Logo";
+
+// pages
+import HomePage from "./pages/HomePage";
+import Detail from "./pages/Detail";
+
+// assets
 import logo from "./assets/logo.png";
 
 const App = (props) => {
@@ -31,7 +39,6 @@ const App = (props) => {
 function mapStateToProps(state) {
   return {
     artistData: state.artistData,
-    artistList: state.artistList,
   };
 }
 
